@@ -1,10 +1,10 @@
 from django.db import models
 
-# Create your models here.
-
-
 
 class Computer(models.Model):
-	Manufacturer = models.CharField(max_length = 250)
-	Serial = models.IntegerField()
-	Comments = models.CharField(max_length = 1000)
+	manufacturer = models.CharField(max_length = 250)
+	serial = models.CharField(max_length = 50)
+	comments = models.CharField(max_length = 1000)
+
+	def __str__(self):
+		return self.manufacturer + "--"+ self.serial
