@@ -1,0 +1,47 @@
+<!--
+	Visualize by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Index</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href={% static 'inv/assets/css/main.css'%} />
+	</head>
+	<body>
+	<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<span class="avatar"><img src="https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.digimanindia.com%2Fimages%2Fcomputer-support-in-mumbai.jpg&f=1"></span>
+			</header>
+			<!-- Thumbnails -->
+			<section class="thumbnails">
+				<div>
+			{% if inve.computer_set.count %}
+					<ul>
+					{%for c in inve.computer_set.all %}
+						<li> <a href="{{c.id}}">{{ c}} </a> </li> 							
+				{% endfor %}
+
+					</ul>
+			{% else %}
+				<h3> There are no Computers stored in the system </h3>
+				</div>
+			{% endif %}
+			</section>
+			<!-- Footer -->
+			<footer id="footer">
+				<p>&copy; Index_page. All rights reserved.</p>
+				<form action="inv:inv_index">
+    				<input type="submit" value="Go back" />
+				</form>
+			</footer>
+
+		</div>
+	</body>
+</html>
