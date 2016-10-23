@@ -10,13 +10,50 @@
 
 /* Reset */
 
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
 		border: 0;
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+	}
+nav {
+  width: 100%;
+  background-color:#65A8A6;
+}
+
+	nav ul li {
+	  display:inline-block;  
+	}
+
+	nav a {
+	  color:black;
+	  display:block;
+	  text-decoration: none;
+	  padding:10px 30px;
+	 }
+
+	nav a:hover {
+	  background: #E65540;
+	}
+
+	.menu-trigger {
+	  display:none;
+	  color:#F8ECC2;
+	}
+
+	@media screen and (max-width:500px) {
+	  .menu-trigger {
+	    display:block;
+	  }
+	  nav ul li {
+	    display:block;
+	    border-top:1px #79896D solid;    
+	  }
+	  nav ul {
+	    display:none;
+	  }
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -33,11 +70,6 @@
 
 	blockquote, q {
 		quotes: none;
-	}
-
-	blockquote:before, blockquote:after, q:before, q:after {
-		content: '';
-		content: none;
 	}
 
 	table {
@@ -2488,68 +2520,6 @@
 
 		}
 
-/* Poptrox */
-
-	.poptrox-popup {
-		-moz-box-sizing: content-box;
-		-webkit-box-sizing: content-box;
-		-ms-box-sizing: content-box;
-		box-sizing: content-box;
-		background: rgba(255, 255, 255, 0.25);
-		box-shadow: 0 0.5em 3em 0 rgba(0, 0, 0, 0.25);
-		border-radius: 4px;
-		overflow: hidden;
-	}
-
-		.poptrox-popup .closer {
-			-moz-transition: opacity 0.2s ease-in-out;
-			-webkit-transition: opacity 0.2s ease-in-out;
-			-ms-transition: opacity 0.2s ease-in-out;
-			transition: opacity 0.2s ease-in-out;
-			text-decoration: none;
-			position: absolute;
-			top: 1em;
-			right: 1em;
-			z-index: 2;
-			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-			white-space: nowrap;
-			text-indent: 2.5em;
-			overflow: hidden;
-			width: 2.5em;
-			height: 2.5em;
-			display: block;
-		}
-
-			.poptrox-popup .closer:before {
-				content: "";
-				-moz-osx-font-smoothing: grayscale;
-				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
-				font-style: normal;
-				font-weight: normal;
-				text-transform: none !important;
-			}
-
-			.poptrox-popup .closer:before {
-				display: block;
-				position: relative;
-				text-indent: 0;
-				border-radius: 100%;
-				box-shadow: inset 0 0 0 1px #ffffff;
-				color: #ffffff !important;
-				width: 2.5em;
-				height: 2.5em;
-				line-height: 2.5em;
-			}
-
-		.poptrox-popup:hover .closer {
-			opacity: 0.5;
-		}
-
-			.poptrox-popup:hover .closer:hover {
-				opacity: 1.0;
-			}
-
 /* Wrapper */
 
 	#wrapper {
@@ -2581,7 +2551,6 @@
 	}
 
 /* Header */
-
 	#header {
 		text-align: center;
 		padding: 6em 0 4em 0;
@@ -2594,7 +2563,7 @@
 		#header .avatar {
 			border-radius: 100%;
 			display: inline-block;
-			margin: 0 0 2em 0;
+			margin: 0 0 0 0;
 			padding: 0.5em;
 			border: solid 1px rgba(255, 255, 255, 0.25);
 			background-color: rgba(255, 255, 255, 0.075);
@@ -2626,7 +2595,7 @@
 			border-top: solid 1px rgba(255, 255, 255, 0.25);
 			width: 10em;
 			display: block;
-			margin: 0 auto 3em auto;
+			margin: 0 auto 1em auto;
 		}
 
 		@media screen and (max-width: 1280px) {

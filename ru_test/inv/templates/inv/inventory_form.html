@@ -1,0 +1,45 @@
+{% block title %} Add a New Inventory{% endblock %}
+{% block all_inventories_active %} active{% endblock %}
+{% load staticfiles %}
+
+{% block body %}
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <header>
+        <a class="navbar-brand" href="{% url 'inv:inv_index' %}">Home</a>
+    </header>
+<div class="container-fluid">
+
+    <div class="row">
+    <title> Add Inventory </title>
+        <div class="col-sm-12 col-md-7">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Add a New Inventory</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                   <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include 'inv/form_template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">Submit</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-5">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p>First, create a new inventory by filling out the form on this page. Once an inventory is created you will be able to add/upload computers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
